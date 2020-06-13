@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//链表结构
 typedef struct LNode
 {
     int value;
     LNode *next;
 };
 
-
+//合并函数
 LNode *Combine(LNode *a, LNode *b)
 {
 	if(a==NULL)
@@ -54,6 +55,8 @@ int main()
 	LNode *head1 = l1;
 	LNode *head2 = l2;
 	LNode *tail = NULL;
+	
+	//输入2个有序链表，依次输入长度和元素
 	printf("Please input the length of the first List:\n");
 	scanf("%d",&n1);
 	printf("Please input the elements of the first List:\n");
@@ -77,6 +80,7 @@ int main()
 	}
 	tail->next = NULL;
 	
+	//合并链表
 	LNode *combine = Combine(head1,head2);
 	printf("The combined List is:\n");
 	while(combine!=NULL)
@@ -84,6 +88,8 @@ int main()
 		printf("%d ", combine->value);
 		combine = combine->next;
 	}
+	
+	return 0;
 }
 
 
